@@ -10,6 +10,7 @@ Primary remote URL: `https://github.com/atozwizard/trocr_small_korean_finetune.g
 Backup remote: `backup`
 Backup remote URL: `ssh://git@210.113.0.140:2345/home/git/projects/twentyflags.git`
 Backup ref: `projects/trocr_small_korean_finetune/main`
+Required commit author: `atozwizard <251137756+atozwizard@users.noreply.github.com>`
 
 ## Mental Model
 
@@ -29,6 +30,8 @@ git branch --show-current
 git status --short
 git remote -v
 git config --get-all remote.backup.fetch
+git config user.name
+git config user.email
 ```
 
 Expected values:
@@ -39,9 +42,28 @@ branch: main
 origin: https://github.com/atozwizard/trocr_small_korean_finetune.git
 backup: ssh://git@210.113.0.140:2345/home/git/projects/twentyflags.git
 backup fetch: +refs/heads/projects/trocr_small_korean_finetune/main:refs/remotes/backup/projects/trocr_small_korean_finetune/main
+user.name: atozwizard
+user.email: 251137756+atozwizard@users.noreply.github.com
 ```
 
 If any value does not match, stop and report the mismatch. Do not "fix" remotes, branches, or refs unless the user explicitly asks for that repair.
+
+## Commit Author Policy
+
+All commits intended for GitHub must use the GitHub-linked author:
+
+```text
+atozwizard <251137756+atozwizard@users.noreply.github.com>
+```
+
+If the local config is missing or inherited from the global `twentyflags` identity, set the repository-local config before committing:
+
+```bash
+git config user.name atozwizard
+git config user.email 251137756+atozwizard@users.noreply.github.com
+```
+
+Do not create commits as `twentyflags <twentyflags@knocklab.com>` in this project.
 
 ## Workspace Boundaries
 
@@ -132,4 +154,3 @@ When finishing work in this checkout, tell the user:
 - whether changes were pushed to GitHub;
 - whether changes were backed up to the server;
 - any commands that failed or were intentionally skipped.
-
