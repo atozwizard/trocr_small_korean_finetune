@@ -4,6 +4,8 @@
 
 GitHub 저장소를 정본으로 사용하고, 할당받은 서버의 `twentyflags.git` bare repo는 백업 remote로 사용한다.
 
+에이전트는 작업 전에 반드시 `AGENTS.md`를 먼저 읽고, branch, remote, backup ref가 문서와 일치하는지 확인해야 한다.
+
 원격 구성:
 
 ```text
