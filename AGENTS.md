@@ -2,9 +2,11 @@
 
 This checkout is a single project workspace.
 
-Project: trocr_finetune
-Allowed branch: projects/trocr_finetune/main
-Allowed remote: ssh://git@210.113.0.140:2345/home/git/projects/twentyflags.git
+Project: trocr_small_korean_finetune
+Allowed branch: main
+Primary remote: https://github.com/atozwizard/trocr_small_korean_finetune.git
+Backup remote: ssh://git@210.113.0.140:2345/home/git/projects/twentyflags.git
+Backup ref: projects/trocr_small_korean_finetune/main
 
 ## Boundaries
 
@@ -26,7 +28,7 @@ git status --short
 The current branch must be:
 
 ```text
-projects/trocr_finetune/main
+main
 ```
 
 Allowed Git operations:
@@ -36,15 +38,16 @@ Allowed Git operations:
 - `git add`
 - `git commit`
 - `git pull --ff-only`
-- `git push origin HEAD:projects/trocr_finetune/main`
+- `git push origin main`
+- `git push backup HEAD:projects/trocr_small_korean_finetune/main`
 
 Forbidden Git operations:
 
 - Switching to another project branch
 - Merging another project branch
-- Pushing to `main`, `master`, or another `projects/*` branch
+- Pushing directly to server refs other than `projects/trocr_small_korean_finetune/main`
+- Pushing to `master` or another `projects/*` branch
 - `git push --all`
 - `git push --mirror`
 - Editing remote URLs
 - Deleting branches or tags
-
